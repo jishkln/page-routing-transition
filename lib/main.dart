@@ -5,7 +5,7 @@ import 'package:flutter_page_route_transition/screens/fade_screen.dart';
 import 'package:flutter_page_route_transition/screens/random_screen.dart';
 import 'package:flutter_page_route_transition/screens/rotation_screen.dart';
 import 'package:flutter_page_route_transition/screens/scale_screen.dart';
-import 'package:flutter_page_route_transition/screens/size_screen.dart'; 
+import 'package:flutter_page_route_transition/screens/size_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -34,16 +34,19 @@ class Screen1 extends StatelessWidget {
     'Random': const RandomScreen(),
   };
 
-    Screen1({super.key});
+  Screen1({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
+      appBar: AppBar(
+        title: const Text("App Bar"),
+      ),
       body: SizedBox(
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: buttons(context),
         ),
